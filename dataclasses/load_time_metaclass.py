@@ -11,11 +11,11 @@ class LoadTimeMeta(type):
 
 
 class A(metaclass=LoadTimeMeta):
-    pass
+    __class_load_time__ = None
 
 
 class B(A):
-    pass
+    __class_load_time__ = None
 
 
 def main():
