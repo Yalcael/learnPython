@@ -10,11 +10,11 @@
 
 
 def greet(name):
-    print(f'Hello, {name}!')
+    print(f"Hello, {name}!")
 
 
-if __name__ == '__main__':
-    user_name = input('Enter your name: ')
+if __name__ == "__main__":
+    user_name = input("Enter your name: ")
     greet(user_name)
 
 # The benefit is all about making our code reusable by using if __name__ == '__main__'.
@@ -23,11 +23,10 @@ if __name__ == '__main__':
 from my_greet_module import greet
 
 
-name = 'John Doe'
+name = "John Doe"
 result = greet(name)
-print(f'Welcome! {result}.')
+print(f"Welcome! {result}.")
 
 # See, we imported our my_greet_module and use the greet functino without running the script's main code. This is fantastic for creating reusable code libraries.
 # This can be especially handy in larger Python projects, where you have multiple scripts that work together.
 # You can import functions and classes from one script into another without running the whole program every time.
-
