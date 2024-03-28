@@ -9,24 +9,32 @@ def get_response(text: str) -> str:
     elif "how are you today?" in lowered:
         return "I'm good thanks!"
     elif "your name" in lowered:
-        return "My name is SUPERBOT69"
+        return "My name is SUPER_BOT69"
     elif "time" in lowered:
-        current_time : datetime = datetime.now()
-        return f"it is {current_time:%H:%M} now!"
-    elif lowered in ["bye", "byebye", "Goodbye"]:
-        return "It was nice talking to you!!"
-    elif lowered in ["Israel", "Palestine", "Ukraine", "Russia"]:
-        return f"I won't answer anything relate to any wars. All I can say tho it's free Palestine and Ukraine."
+        current_time = datetime.now()
+        return f"It is {current_time:%H:%M} now!"
+    elif lowered in ["bye", "goodbye"]:
+        return "It was nice talking to you!"
+    elif lowered in ["israel", "palestine", "ukraine", "russia"]:
+        return "I won't answer anything related to any wars. All I can say though is free Palestine and Ukraine."
     else:
-        return f"I didn't understand {text}, i'm very sorry."
+        return f"I didn't understand '{text}', I'm very sorry."
 
 
-while True:
-    user_input: str = input(f"You: ")
+def bot_interaction():
+    user_name = input("Bot: What is your name?: ")
+    print(f"Bot: Welcome {user_name}!")
 
-    if user_input == "exit":
-        print("Bot: It was a pleasure talking to you!")
-        sys.exit()
+    while True:
+        conversation_input = input(f"Bot: What do you want to talk about today, {user_name}? ")
 
-    bot_response: str = get_response(user_input)
-    print(f" Bot said: \n{bot_response}")
+        if conversation_input.lower() == "exit":
+            print("Bot: It was a pleasure talking to you!")
+            sys.exit()
+        else:
+            bot_response = get_response(conversation_input)
+            print(f"Bot: {bot_response}")
+
+
+# Start the conversation
+bot_interaction()
