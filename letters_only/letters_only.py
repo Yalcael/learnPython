@@ -9,6 +9,7 @@ def is_letters_only(text: str) -> None:
             raise ValueError("Text can only contain letters from the alphabet.")
     print(f"{text} is letters-only. Noice!")
 
+
 def main() -> None:
     while True:
         try:
