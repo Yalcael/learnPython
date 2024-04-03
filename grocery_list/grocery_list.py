@@ -8,13 +8,19 @@ def welcome_message() -> None:
     print("1. Add a grocery")
     print("2. Remove a grocery")
     print("3. Display")
+    print("4. Modify a grocery")
     print("0. Exit")
     print("------------------------------------")
 
 
 def add_tem(item: str, groceries: list[str]) -> None:
-    groceries.append(item)
-    print(f"'{item}' has been added!")
+    if item == "":
+        print(f"Item {item} can't be added")
+    elif item in groceries:
+        print(f"Item {item} is already in the list")
+    else:
+        groceries.append(item)
+        print(f"Item {item} has been added to the list!")
 
 
 def remove_item(item: str, groceries: list[str]) -> None:
@@ -33,7 +39,19 @@ def display_groceries(groceries: list[str]) -> None:
 
 
 def is_an_option(text: str) -> bool:
-    return text in ["1", "2", "3", "0"]
+    return text in ["1", "2", "3", "4", "0"]
+
+
+def modify_list_of_groceries(groceries: list[str]) -> None:
+    print("Current list of groceries: ", groceries)
+    item_to_modify = input("Enter the item you want to modify: ")
+    if item_to_modify in groceries:
+        new_item = input("Enter the new item: ")
+        index = groceries.index(item_to_modify)
+        groceries[index] = new_item
+        print(f"'{item_to_modify}' has been modified to '{new_item}'.")
+    else:
+        print(f"'{item_to_modify}' is not in the list of groceries.")
 
 
 def main() -> None:
@@ -55,6 +73,8 @@ def main() -> None:
             remove_item(item_to_remove, groceries)
         elif user_input == "3":
             display_groceries(groceries)
+        elif user_input == "4":
+            modify_list_of_groceries(groceries)
         elif user_input == "0":
             print("Thank you for coming to the Vincent's Grocery!")
             sys.exit()
