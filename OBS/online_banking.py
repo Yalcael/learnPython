@@ -13,7 +13,7 @@ class Account:
 
     def deposit(self, amount: float) -> None:
         self.account_balance += amount
-        print(f" Account {self.name} deposited {self.account_balance} $. Account balance {self.account_balance}")
+        print(f" Account {self.name} deposited {amount} $. Account balance {self.account_balance}")
         # The deposit method allows users to add funds to their account.
         # The method takes an additional parameter amount, which is the amount to be deposited.
         # Inside the method, the amount is added to the current balance using self.balance += amount.
