@@ -38,6 +38,9 @@ def main() -> None:
     while True:
         user_input = input("Your question: ")
         if user_input:
+            if user_input == "exit":
+                print(f"Thank you for chatting with me OwO!")
+                break
             response = bot.get_response(user_input)
             print(f"Bot : {response}")
         else:
