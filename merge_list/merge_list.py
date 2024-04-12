@@ -32,8 +32,8 @@ merge()
 
 
 def list_comprehension():
-    num1 = [1,2,3]
-    num2 = [4,5,6]
+    num1 = [1, 2, 3]
+    num2 = [4, 5, 6]
     # using list comprehension
     num3 = [x for n in (num1, num2) for x in n]
     print(num3)
@@ -45,9 +45,9 @@ list_comprehension()
 
 def extend_lists():
     # list 1
-    ls1 = [11,19,25,40]
+    ls1 = [11, 19, 25, 40]
     # list 2
-    ls2 = [31,84,13]
+    ls2 = [31, 84, 13]
     ls1.extend(ls2)
     print(ls1)
 

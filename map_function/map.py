@@ -71,6 +71,7 @@ second_iterable = [4, 8, 1, 7]
 
 mapping = map(add_numbers, first_iterable, second_iterable)
 result = list(mapping)
+print(f"Final result: {result}.")
 # Passing multiple iterables to map() function
 
 # This time we are going to perform the sum operation on the corresponding values in both iterables

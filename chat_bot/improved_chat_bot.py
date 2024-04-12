@@ -6,6 +6,13 @@ class ChatBot:
     def __init__(self, knowledge: dict):
         self.knowledge = knowledge
 
+    def get_best_match(self, user_input: str) -> str | None:
+        questions = [q.lower() for q in self.knowledge.keys()]
+        matches = get_close_matches(user_input, questions, n=1, cutoff=0.6)
+
+        if matches:
+            return matches[0]
+
     def get_response(self, user_input: str) -> str:
         user_input = user_input.lower()  # Convert to lowercase for case-insensitivity
         best_match = self.get_best_match(user_input)
@@ -14,13 +21,6 @@ class ChatBot:
             return self.knowledge[best_match]
         else:
             return "Sorry, I couldn't understand that. Please try again."
-
-    def get_best_match(self, user_input: str) -> str | None:
-        questions = [q.lower() for q in self.knowledge.keys()]
-        matches = get_close_matches(user_input, questions, n=1, cutoff=0.6)
-
-        if matches:
-            return matches[0]
 
 
 def main() -> None:
