@@ -27,7 +27,8 @@ async def main() -> None:
     )
     
     results: list[dict] = await tasks
-    print(results)
+    for result in results:
+        print(result)
 
 
 if __name__ == "__main__":
