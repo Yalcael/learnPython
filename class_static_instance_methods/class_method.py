@@ -24,4 +24,4 @@ if __name__ == "__main__":
 # You notice something funky there, that we have CLS instead of self, and that's because we are now editing the class directly.
 
 
-# Class method, is going to affect the actual class while.
+# Class method, is going to affect the actual class.
