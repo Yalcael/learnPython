@@ -1,5 +1,5 @@
 from typing import TextIO
-
+# RAW = Read / Append and Write
 
 file_path: str = "info.txt"
 
