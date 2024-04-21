@@ -40,6 +40,7 @@ def main() -> None:
         elif user_input == "clear mean":
             del ds.mean
             print("Cleared mean")
+            # It's not actually going to delete the method, it's just going to delete the cache for the mean.
         elif user_input == "sum":
             print(ds.sum)
         elif user_input == "mean":
