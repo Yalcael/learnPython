@@ -1,0 +1,6 @@
+{
+  "name": "Vincent",
+  "age":"25",
+  "friends": ["Luigi", "Mario"],
+  "other_info": null
+}
